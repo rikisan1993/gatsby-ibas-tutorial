@@ -3,8 +3,10 @@ module.exports = {
     title: `RKSP`,
     description: `I'm a Gatsby.js Developer!`,
     author: `@rksp`,
+    siteUrl: `https://www.rksp.dev`
   },
   plugins: [
+    `gatsby-plugin-feed`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
