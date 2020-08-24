@@ -4,6 +4,8 @@ import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import postStyles from "./blog-post.module.scss";
 
+import SEO from "../components/seo"
+
 export const query = graphql`
 query ($slug: String!) {
     markdownRemark(fields: {slug: {eq: $slug}}) {
@@ -27,6 +29,8 @@ query ($slug: String!) {
 const BlogPost = props => {
     return (
         <Layout>
+            
+            <SEO title={props.data.markdownRemark.frontmatter.title} />   
             <div className={postStyles.content}>
                 <h1>{props.data.markdownRemark.frontmatter.title}</h1>
                 <span className={postStyles.meta}>

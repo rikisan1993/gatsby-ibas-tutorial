@@ -3,7 +3,6 @@
 
 // import Layout from "../components/layout"
 // import Image from "../components/image"
-import SEO from "../components/seo"
 
 // const IndexPage = () => (
 //   <Layout>
@@ -24,10 +23,9 @@ import SEO from "../components/seo"
 import React from "react";
 import Layout from "../components/layout-new";
 
-const Index = props => {
+const Index = () => {
   return (
-    <Layout>
-      <SEO title={props.data.markdownRemark.frontmatter.title} />
+    <Layout>      
       <div>
         <h1>Home Page</h1>
         <h2>YOHOO!, I'm a Gatsby.js developer</h2>
