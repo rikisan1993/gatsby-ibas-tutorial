@@ -27,16 +27,12 @@ module.exports = {
                   name: 'feed', // This determines the name of your feed file => feed.json & feed.xml
                   query: `
         {
-          allMarkdownRemark(
-            sort: {order: DESC, fields: [frontmatter___date]},
-            limit: 100,
-            ) {
+          allMarkdownRemark( sort: {order: DESC, fields: [frontmatter___date]}, limit: 100,) {
             edges {
               node {
                 html
                 frontmatter {
                   date
-                  path
                   title
                 }
               }
@@ -54,7 +50,7 @@ module.exports = {
                           return {
                               title: edge.node.frontmatter.title,
                               date: edge.node.frontmatter.date,
-                              url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                              url: site.siteMetadata.siteUrl,
                               html: edge.node.html,
                           }
                       })
