@@ -1,9 +1,10 @@
 importScripts('https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js');
 importScripts('https://www.gstatic.com/firebasejs/7.19.0/firebase-messaging.js');
 const CONFIG_URL = 'https://us-central1-rksplab.cloudfunctions.net/config';
+const version = '0.0.1';
 
 const main = async () => {
-    
+    console.log(`Service Worker version${version}`);
     const response = await fetch(CONFIG_URL, {
         method: 'GET'
     });
