@@ -25,7 +25,11 @@ const main = async () => {
         const notificationOptions = {
           body: summary,
           icon,
-          image
+          image,
+          actions: [
+            { action: 'readmore', title: 'Read More' },
+            { action: 'dismiss', title: 'Dismiss' },
+          ]
         };
       
         return self.registration.showNotification(notificationTitle, notificationOptions);
