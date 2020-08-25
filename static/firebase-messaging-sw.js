@@ -16,10 +16,16 @@ const main = async () => {
     
     messaging.setBackgroundMessageHandler(function(payload) {
       console.log({payload})
-        const notificationTitle = 'Background Message Title';
+      const image = payload.data.image;
+      const summary = payload.data.summary;
+      const title = payload.data.title;
+      const icon = payload.data.icon;
+
+        const notificationTitle = title;
         const notificationOptions = {
-          body: 'Background Message body.',
-          icon: '/firebase-logo.png'
+          body: summary,
+          icon,
+          image
         };
       
         return self.registration.showNotification(notificationTitle, notificationOptions);
